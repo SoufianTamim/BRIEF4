@@ -1,0 +1,106 @@
+/* Exercice 2 : Date : */
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+body{
+    display: flex;
+    background-color: whitesmoke;
+}
+iframe{
+    border: none;
+    position: fixed;
+    height: 100vh;
+}
+#iframe{
+    display: none;
+    position: static !important;
+    height: 22vh !important;
+    width: 100%;
+}
+#container{
+    margin-left: 330px;
+    margin-right: 20px;
+    width: 100%;
+}
+h1{
+    font-style: normal;
+    font-weight: 900;
+    font-size: 30px;
+    line-height: 58px;
+    margin-top: 10px;
+}
+h2{
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 29px;
+    background-color:#fc036b;
+    color: #fff;
+    width: 130px;
+    padding: 0 5px;
+    margin-top: 10px;
+    letter-spacing: 1px;
+    border-top-right-radius: 10px;
+}
+
+section{
+    width: 80%;
+    margin: 0 auto;
+}
+#enoncé p{
+    background-color: #fff;
+    font-size: 15px;
+    font-weight: 300;
+    padding: 10px 5px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+#démo{
+    background-color: #fff;
+    padding-left:  80px;
+    padding-top: 20px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}
+
+#date .dateInput{
+    display: flex;
+}
+input{
+    background-color: #f1f1f1;
+    padding: 3px 0;
+    border: none;
+    outline: none;
+}
+#date span{
+    width: 10%;
+}
+button{
+    width: 150px;
+    color: white;
+    border: none;
+    margin-left: 50px;
+    cursor: pointer;
+    background-color: #484872;
+    color: #fff;
+}
+#ex2result{
+    padding-bottom: 20px;
+    margin-left: 102px;
+}
+
+#source pre{
+    background-color: #fff;
+    padding: 10px 5px;
+    margin-bottom: 20px;
+    padding: 10px 10px;
+    font-weight: 200;
+    font-size: 15px;
+    border-bottom-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    border-top-right-radius: 10px;
+}

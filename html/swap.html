@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/calcul.css" />
+    <link rel="icon" type="image/x-icon" href="/js.png" />
+    <title>Swap</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>swap game</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>Ecrire un script qui permute deux nombres saisis dans deux inputs</p>
+      </div>
+      <div id="démo">
+        <h2>Démo</h2>
+        <div>
+          <input type="number" id="num1swap" />
+          <button id="swapB" onclick="swap()">
+            <i class="fa-sharp fa-solid fa-arrow-right-arrow-left"></i>
+          </button>
+          <input type="number" id="num2swap" />
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+          let number
+          function swap() {
+            number = document.getElementById("num1swap").value;
+            document.getElementById("num1swap").value = document.getElementById("num2swap").value;
+            document.getElementById("num2swap").value = number;
+          }</pre
+        >
+      </div>
+    </section>
+    <script
+      src="https://kit.fontawesome.com/c7a60e43cd.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="/js/swap.js"></script>
+  </body>
+</html>

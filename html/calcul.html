@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/calcul.css" />
+    <link rel="icon" type="image/x-icon" href="/js.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Calcul</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <iframe src="respo.html" id="iframe"></iframe>
+    <section id="container">
+      <h1>Calculatrice</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          Créez 4 fonctions Javascript (Somme, Soustraction, Division,
+          Multiplication). L’utilisateur saisie deux nombres dans deux inputs,
+          choisi ensuite une opération arithmétique. Le résultat est donné par
+          l’une des 4 fonctions Javascript.
+        </p>
+      </div>
+      <div id="démo">
+        <h2>Démo</h2>
+        <div>
+          <input type="text" id="n1" />
+          <input type="text" id="n2" /><br />
+          <button id="somme">+</button>
+          <button id="soustraction">-</button>
+          <button id="produit" style="font-size: 12px">x</button>
+          <button id="division">÷</button><br />
+          <input type="text" id="result" />
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+document.getElementById('produit').onclick = function calc() {
+        console.log(n1.value, n2.value);
+        let result = n1.value * n2.value ;
+        document.getElementById('result').value = result ;
+        }
+        document.getElementById('somme').onclick = function calc() {
+            let result = +n1.value + +n2.value ;
+            document.getElementById('result').value = result ;
+        }
+        document.getElementById('soustraction').onclick = function calc() {
+            let result = n1.value -n2.value ;
+            document.getElementById('result').value = result ;
+        }
+        document.getElementById('division').onclick = function calc() {
+            let result = n1.value /n2.value ;
+            document.getElementById('result').value = result ;
+        }
+      </pre
+        >
+      </div>
+    </section>
+    <script src="/js/calcul.js"></script>
+  </body>
+</html>

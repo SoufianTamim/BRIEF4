@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/date.css" />
+    <link rel="icon" type="image/x-icon" href="/js.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Valider une date</title>
+  </head>
+
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>Valider une date</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          Ecrire un script qui permet de saisir les trois champs d’une date
+          (jour, mois et année) et d’indiquer si la date est correcte ou non
+        </p>
+      </div>
+      <h2>Démo</h2>
+      <div id="démo">
+        <div id="date">
+          <div class="dateInput">
+            <span>Jour :</span>
+            <input type="text" id="day" />
+          </div>
+          <br />
+          <div class="dateInput">
+            <span>Mois :</span>
+            <input type="text" id="month" />
+          </div>
+          <br />
+          <div class="dateInput">
+            <span>Année :</span>
+            <input type="text" id="year" />
+            <button onclick="bouttonClick() ">Valider</button>
+          </div>
+          <br />
+          <p id="ex2result"></p>
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+// date=======================================================
+        function date(day , month ,year){
+        
+          let leap = year % 400 == 0 || (year % 100 != 0 && year % 4 == 0);
+          let case1 = (year>0) && (month ==1 || month == 3 || month == 5 || month == 7
+              || month == 8 || month == 10 || month == 12) && (day>=1 && day<=31);
+          let case2 = (year>0) && (month == 4 || month == 6 || month == 9 || month == 11)
+              && (day>=1 && day<= 30);
+          let case3 = (year>0) && (month == 2) && !leap && (day>=1 && day<=28);
+          let case4 = (year>0) && (month == 2) && leap && (day>=1 && day<=29);
+          
+          if(case1 || case2 || case3 || case4){
+              return  true;
+          }else{
+              return false;
+          }
+          }
+          function bouttonClick(){
+          let day = document.getElementById('day').value;
+          let month = document.getElementById('month').value;
+          let year = document.getElementById('year').value;
+          if(date(day,month,year)){
+          document.getElementById('ex2result').innerHTML = `${day} /  ${month} /  ${year}  est valide.`
+          }else{
+              document.getElementById('ex2result').innerHTML = `${day} /  ${month} /  ${year}  n'est pas valide.`
+          }
+          }</pre
+        >
+      </div>
+    </section>
+    <script src="/js/date.js"></script>
+  </body>
+</html>

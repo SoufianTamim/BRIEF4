@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/deviner.css" />
+    <link rel="icon" type="image/x-icon" href="/js.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <title>Devine le nombre</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>Devine le nombre!</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          L'utilisateur doit devenir un nombre entre 1 et 50 que le programme a
+          choisi aléatoirement en 10 tentatives. Quand l'utilisateur entre une
+          valeur, on lui affiche le nombre de tentetives restantes, ainsi qu'un
+          message indiquant si sa réponse est correct ou pas.
+        </p>
+      </div>
+      <div id="démo">
+        <h2>Démo</h2>
+        <div id="exercice">
+          <p>Tentatives restantes:<span id="tries"> 10</span>/10</p>
+          <input type="text" id="inputnumber" />
+          <button id="btn">Envoyer</button>
+          <p id="textoutput"></p>
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+let btn = document.getElementById('btn');
+            let output = document.getElementById('outputtext');
+            const number = Math.floor(Math.random() * 50) +1;
+            console.log(number );
+            let i = 10 ;
+            btn.addEventListener('click', function(){
+                i--;
+                tries.innerHTML = i;
+            console.log(i);
+                while ( i > 0 ){  
+                let inputnum = inputnumber.value;
+                console.log(inputnum , number );
+            if(number == inputnum ) {
+                textoutput.innerHTML = "good you win";
+            break;
+            } else {
+                textoutput.innerHTML = "";
+                setTimeout(() => {
+                    textoutput.innerHTML = "very bad you lose";
+                }, 200);
+                break;
+            }} 
+            if(i <= 0) {
+                textoutput.innerHTML = "you lose forever";
+                btn.outerHTML = "";
+            }
+            });</pre
+        >
+      </div>
+    </section>
+    <script src="/js/deviner.js"></script>
+  </body>
+</html>

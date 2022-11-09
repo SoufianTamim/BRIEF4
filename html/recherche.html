@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/recherche.css">
+    <link rel="icon" type="image/x-icon" href="/js.png">
+    <title>Recherche</title>
+</head>
+
+<body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+        <h1>Recherche et suppression dans une chaine</h1>
+        <div id="enoncé">
+            <h2>Enoncé</h2>
+            <p>Ecrire un programme Javascript qui demande à l’utilisateur de saisir une phrase dans une zone de texte et
+                un mot dans une autre zone de texte. Le clique sur le bouton rechercher affiche un message si le mot
+                existe dans la phrase ou non. Le clique sur le bouton supprimer permet d’effacer toutes les occurrence
+                du mot dans la phrase ( si le mot existe bien sûr). </p>
+        </div>
+        <div id="démo">
+            <h2>Démo</h2>
+            <div id="exercice">
+                <span>Saisir une phrase </span>
+                <input type="text" id="text">
+                <button onclick="rechercher()">Rechercher</button><br>
+                <span>Saisir le mot à rechercher ou à supprimer :</span>
+                <input type="text" id="word">
+                <button onclick="supprimer()">Supprimer les occurences</button>
+                <p id="ex7result">Le message de recherche s’affiche ici
+                    Ou la nouvelle phrase après la suppression des occurences</p>
+            </div>
+        </div>
+        <div id="source">
+            <h2>Code source</h2>
+            <pre>
+                function rechercher(){
+                    let text = document.getElementById('text').value;
+                    let word = document.getElementById('word').value;
+                    let search = text.includes(word)
+                
+                    if(search){
+                        ex7result = 'Le mot existe dans la phrase.'
+                        }
+                        else{
+                        ex7result = 'Le mot n\'existe pas dans la phrase.'
+                        }
+                    document.getElementById('ex7result').innerHTML = ex7result;
+                }
+                function supprimer(){
+                    let text = document.getElementById('text').value;
+                    let word = document.getElementById('word').value;
+                    let search = text.includes(word)
+                    let ex7result = text.replace(word,"")
+                
+                    if(!search){
+                        ex7result = 'Le mot n\'existe pas dans la phrase.'
+                    }
+                    document.getElementById('ex7result').innerHTML = ex7result;
+                }</pre>
+        </div>
+    </section>
+    <script src="/js/recherche.js"></script>
+
+</body>
+
+</html>

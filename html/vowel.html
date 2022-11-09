@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/vowel.css" />
+    <link rel="icon" type="image/x-icon" href="/js.png">
+    <title>Compter le nombre de voyelles dans une chaine</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>Compter le nombre de voyelles dans une chaine</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          Ecrire un programme Javascript qui permet de calculer le nombre de
+          voyelles (a,e,i,o,u,y) dans une phrase saisie par l’utilisateur
+        </p>
+      </div>
+      <div id="démo">
+        <h2>Démo</h2>
+        <div id="exercice">
+          <div>
+            <p>Saisir une phrase :</p>
+            <input type="text" id="Mytext" />
+            <button type="button" id="myButton">
+              Compter les nombres de voyells
+            </button>
+          </div>
+          <p id="bg-p">La phrase que vous avez saisi contient ?? voyelles</p>
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+const vowels = ["a", "e", "i", "o", "u", "y"];
+          function countVowel(str) {
+            let count = 0;
+            for (let letter of str.toLowerCase()) {
+              if (vowels.includes(letter)) {
+                count++;
+              }
+            }
+            return count;
+        }
+        document.getElementById("myButton").onclick = function () {
+            let string = document.getElementById("Mytext").value;
+            const result = countVowel(string);
+            document.getElementById("bg-p").innerHTML = "la phrase que vous avez saisi contient "+ result + "  voyells";
+        }
+          
+          }</pre
+        >
+      </div>
+    </section>
+    <script src="/js/vowel.js"></script>
+  </body>
+</html>

@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Tableau Recherche</title>
+    <link rel="stylesheet" href="/css/exe10.css" />
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>Recherche dans un tableau</h1>
+      <h2>Enoncé</h2>
+      <div id="enoncé">
+        <p>
+          Ecrire un programme Javascript qui permet de rechercher une valeur
+          dans un tableau d’entier. L’utilisateur doit suivre les étapes
+          suivantes : 1. Saisir la taille du tableau, 2. Remplir le tableau par
+          des entiers 3. Introduire la valeur à rechercher 4. Cliquer sur le
+          boutons « Rechercher » Le programme affiche ensuite un message si la
+          valeur à rechercher existe ou non dans le tableau.
+        </p>
+      </div>
+
+      <div id="démo">
+        <h2>Démo</h2>
+        <div id="exercice">
+          <div class="flex">
+            <p>Donner la taille du tableau</p>
+            <input type="text" name="num" id="tailleRecherche" />
+            <button id="valider" onclick="validerSearch()">Valider</button><br />
+          </div>
+          <div class="flex">
+            <p id="p" >Veuiller remplir le tableau</p>
+            <div id="inputsSearch"></div>
+          </div>
+          <div class="flex">
+            <p>Donner la valeur à rechercher dans le tableau</p>
+            <input type="text" name="search" id="searchInp" />
+            <button id="search" onclick="search()">Rechercher</button>
+          </div>
+          <div class="result">
+            <p id="searchResult"></p>
+          </div>
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+            function validerSearch() {
+                document.getElementById('inputsSearch').innerHTML = ''
+                var tailleRecherche = parseInt(document.getElementById('tailleRecherche').value)
+                for(x=1 ; x<= tailleRecherche ;x++){
+                    var inp = document.createElement('INPUT')
+                    inp.setAttribute('id', 'inputSearch'+x)
+                    document.getElementById('inputsSearch').appendChild(inp)
+                }
+            }
+            function search(){
+                document.getElementById('searchResult').innerHTML = ''
+                var tailleRecherche = parseInt(document.getElementById('tailleRecherche').value)
+                var searchInp = parseInt(document.getElementById('searchInp').value)
+                const arraySearch = []
+                for (let i = 1; i <= tailleRecherche; i++) {
+                    arraySearch.push(document.getElementById('inputSearch'+i).value)
+                }
+                for (let i = 0; i < tailleRecherche; i++){
+                    let arrayValue = arraySearch.at(i)
+                    var ifTrue;
+                    if(arrayValue == searchInp){
+                        ifTrue = true
+                        break
+                    }else{
+                        ifTrue = false
+                    }
+                }
+                if(ifTrue){
+                    var trueSearch = 'la valeur existe dans le tableau'
+                }else{
+                    var trueSearch = 'la valeur n\'existe pas dans le tableau'
+                }
+                console.log(trueSearch)
+            document.getElementById('searchResult').innerHTML = trueSearch
+            }
+        </pre>
+      </div>
+    </section>
+    <script src="/js/exe10.js"></script>
+  </body>
+</html>

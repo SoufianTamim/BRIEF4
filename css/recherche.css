@@ -1,0 +1,130 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+body{
+  display: flex;
+  background-color: whitesmoke;
+}
+iframe{
+  border: none;
+  position: fixed;
+  height: 100vh;
+}
+#iframe{
+  display: none;
+  position: static !important;
+  height: 22vh !important;
+  width: 100%;
+}
+#container{
+  margin-left: 330px;
+  margin-right: 20px;
+  width: 100%;
+}
+
+h1{
+  font-style: normal;
+  font-weight: 900;
+  font-size: 30px;
+  line-height: 58px;
+  margin-top: 10px;
+}
+h2{
+  margin-top: 15px;
+  font-size: 15px;
+  font-weight: 500;
+  background-color:#fc036b;
+  color: #fff;
+  width: 120px;
+  padding: 3px 5px;
+  letter-spacing: 10%;
+  border-top-right-radius: 10px;
+}
+#enoncé p{
+  background-color: #fff;
+  padding: 10px 10px;
+  font-weight: 200;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 29.05px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px
+}
+#exercice{
+  background-color: #fff;
+  padding: 20px 10px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+#exercice div:nth-of-type(2){
+  margin: 30px 0;
+}
+#text{
+  background-color: #f1f1f1;
+  width: 250px;
+  padding: 2px 5px;
+  margin-left: 5px;
+  font-size: 15px;
+  font-style: italic;
+  border-radius: 5px;
+  outline: none;
+  border: #484872 solid 1px;
+}
+
+button{
+  background-color: #484872;
+  color: #fff;
+  width: 200px;
+  margin-left: 15px;
+  padding: 3px 0;
+  border: none;
+  cursor: pointer;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 24.2px;
+  text-align: center; 
+  border-radius: 10px;
+}
+#word{
+  background-color: #f1f1f1;
+  width: 250px;
+  padding: 2px 5px;
+  margin-left: 5px;
+  margin-top: 30px;
+  font-size: 15px;
+  font-style: italic;
+  border-radius: 5px;
+  outline: none;
+  border: #484872 solid 1px;
+}
+#ex7result{
+  background-color: #D9D9D9;
+  width: 50%;
+  margin: 30px auto;
+  text-align: center;
+  padding: 10px;
+}
+#source{
+  margin-top: 15px;
+}
+#source pre{
+  background-color: #fff;
+  padding: 10px 5px;
+  margin-bottom: 20px;
+  padding: 10px 10px;
+  font-weight: 200;
+  font-size: 15px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border-top-right-radius: 10px;
+}
+
+
+
+
+

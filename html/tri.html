@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/tri.css">
+    <link rel="icon" type="image/x-icon" href="/js.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+    rel="stylesheet"
+    />
+    <title>tri</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <section id="container">
+      <h1>Tri d’un tableau</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          Ecrire un programme Javascript qui permet de trier un tableau d’entier
+          (Utiliser n’importe quel algorithme de tri mais surtout pas la
+          fonction Sort de l’objet Array). L’utilisateur commence tout d’abord
+          par saisir la taille du tableau, ensuite il remplit le tableau pour
+          cliquer à la fin sur un bouton trier : celui-ci affichera le tableau
+          en ordre croissant ou décroissant.
+        </p>
+      </div>
+      <div id="démo">
+        <h2>Démo</h2>
+        <div id="exercice">
+          <div class="flex">
+            <p>Donner la taille du tableau</p>
+            <input type="text" id="sizeofthetable" />
+            <button id="btn" onclick="makethetable();">Valider</button>
+          </div>
+          <div class="flex">
+            <p>Veuiller remplir le tableau</p>
+            <div id="tableau"></div>
+            <button onclick="tritable();">Trier</button>
+          </div>
+          <div class="trie">
+            <p>Le tableau reafficher ici après son tri</p>
+            <div id="tableau2"></div>
+          </div>
+        </div>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+          function tri(table){
+            for(var i = 0;i<table.length;i++){
+                for(var j= i+1;j<table.length;j++){
+                    if(table[i]>table[j]){  
+                        var swap = table[i];
+                        table[i] = table[j];
+                        table[j] = swap;
+                    }
+                }
+            }
+        }
+        function  makethetable(){
+        tableau.innerHTML = "";
+        var sizeofthetable = Number(document.getElementById("sizeofthetable").value); 
+        for( i = 1 ; i < sizeofthetable + 1 ; i++ ){
+            tableau.innerHTML += '  <input class="inputstyle" type="text" id="tableid'+i+'" >';
+        }
+        }
+        const arraydata = [];
+        function  tritable(){
+        var sizeofthetable = Number(document.getElementById("sizeofthetable").value);
+        for( i = 1 ; i < sizeofthetable + 1 ; i++ ){
+            arraydata.push( Number( document.getElementById("tableid"+i).value ) ) ;
+        }
+        tri(arraydata);
+        tableau2.innerHTML = "";
+        for( i = 1 ; i < sizeofthetable + 1 ; i++ ){
+            tableau2.innerHTML += '  <input class="inputstyle" type="text" id="table2id'+i+'" >';
+        }
+        for( i = 1 ; i < sizeofthetable + 1 ; i++ ){
+            document.getElementById("table2id"+i).value = arraydata[i - 1];
+        }
+        }
+        
+          </pre>
+      </div>
+    </section>
+    <script src="/js/Tri.js"></script>
+  </body>
+</html>

@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/css/losange.css" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="icon" type="image/x-icon" href="/js.png">
+    <title>Losange en étoiles</title>
+  </head>
+  <body>
+    <iframe src="main.html"></iframe>
+    <!-- ============================Losanges================================== -->
+    <section id="container">
+      <h1>Losange en étoiles</h1>
+      <div id="enoncé">
+        <h2>Enoncé</h2>
+        <p>
+          Ce programme a pour objectif de dessiner un losange en étoiles dont la
+          longueur des diagonales est un nombre impair saisi par l’utilsateur.
+          Dans le cas où l’utilisateur entre un nombre pair, il faut afficher
+          une erreur.
+        </p>
+      </div>
+      <h2>Démo</h2>
+      <div id="démo">
+        <div class="flex">
+          <p>Saisir la longueur des diagonales </p>
+          <input type="text" name="num" id="tailleLosange">
+          <button id="valider" onclick="losange()">valider</button>
+        </div>
+        <div id="paragraphs" style="font-family: monospace;" ></div>
+        <p id="losangeError"></p>
+      </div>
+      <div id="source">
+        <h2>Code source</h2>
+        <pre>
+          function losange(){
+            document.getElementById('losangeError').innerHTML = ''
+            document.getElementById('paragraphs').innerHTML = ''
+            let taille = parseInt(document.getElementById('tailleLosange').value);
+            let L = (taille+1)/2
+            if(taille % 2 != 0){
+            /* permier paragraph */
+            for(x=1 ; x<= taille ;x++){
+                var paragraph = document.createElement('p')
+                paragraph.setAttribute('id', 'paragraph'+x)
+                document.getElementById('paragraphs').appendChild(paragraph)
+            }
+                for(i=1 ; i<=L ; i++){
+                    var stars =''
+                    let space =''
+                    for(j=1 ; j<=L-i ; j++){
+                        space += '&nbsp;'
+                    }
+                        for(k=1 ; k<=2*i-1 ; k++){
+                        stars += '*'
+                        }
+                document.getElementById('paragraph'+i).innerHTML = space+stars;
+                }
+            /*deuxieme paragraph*/
+            
+                let stars2 = stars
+                let space = ''
+            for(i=1 ; i<=taille-L ; i++){
+                for(i= L+1 ; i <= taille ; i++){
+                    for(j=taille-L ; j<=taille-L; j++){
+                        space += '&nbsp;'
+                    }
+                    stars2 = stars2.replace('**','')
+                    document.getElementById('paragraph'+i).innerHTML = space+stars2;
+                }
+            }
+            }else{
+                document.getElementById('losangeError').innerHTML = 'Veuillez saisir un nombre impair.'
+            }
+            }
+        </pre>
+      </div>
+    </section>
+    <script src="/js/losange.js"></script>
+  </body>
+</html>
